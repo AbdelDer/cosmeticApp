@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CosmeticApp</string>
+    <string name="submit">Apply</string>
 </resources>
