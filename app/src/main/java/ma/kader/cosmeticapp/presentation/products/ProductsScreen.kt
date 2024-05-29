@@ -1,4 +1,4 @@
-package ma.kader.cosmeticapp.presentation.home
+package ma.kader.cosmeticapp.presentation.products
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,14 +14,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import ma.kader.cosmeticapp.presentation.home.components.ProductItem
+import ma.kader.cosmeticapp.presentation.products.components.ProductItem
 import ma.kader.cosmeticapp.presentation.util.Screen
 import ma.kader.cosmeticapp.util.TempData
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(
+fun ProductsScreen(
     navController: NavHostController
 ) {
     Scaffold(
@@ -46,5 +46,5 @@ fun HomeScreen(
 @Preview
 @Composable
 fun ProductItemPreview() {
-    HomeScreen(rememberNavController())
+    ProductsScreen(rememberNavController())
 }

@@ -1,4 +1,4 @@
-package ma.kader.cosmeticapp.presentation.home.components
+package ma.kader.cosmeticapp.presentation.products.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
