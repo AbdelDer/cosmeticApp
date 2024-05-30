@@ -39,7 +39,7 @@ fun ProductsScreen(
     ) {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(state.products) { product ->
-                ProductItem(product = product)
+                ProductItem(product = product, navController= navController)
             }
         }
     }

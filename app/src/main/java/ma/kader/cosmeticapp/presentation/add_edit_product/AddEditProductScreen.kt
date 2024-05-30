@@ -11,18 +11,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import ma.kader.cosmeticapp.domain.model.Product
 import ma.kader.cosmeticapp.presentation.add_edit_product.components.EditText
 import ma.kader.cosmeticapp.presentation.add_edit_product.components.SubmitButton
 import ma.kader.cosmeticapp.ui.theme.Dimens.defaultWeight
 import ma.kader.cosmeticapp.ui.theme.Dimens.mediumPadding
-import ma.kader.cosmeticapp.ui.theme.Dimens.smallPadding
 import ma.kader.cosmeticapp.util.TempData.product
 
 @Composable
 fun AddEditProductScreen(
     navController: NavHostController,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    addEditProductViewModel: AddEditProductViewModel
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -38,14 +37,8 @@ fun AddEditProductScreen(
         Spacer(modifier = Modifier.weight(defaultWeight))
         SubmitButton(
             modifier = Modifier.padding(
-                bottom = smallPadding
+                bottom = mediumPadding
             )
         )
     }
-}
-
-@Preview
-@Composable
-fun AddEditProductScreenPreview() {
-    AddEditProductScreen(navController = rememberNavController())
 }
