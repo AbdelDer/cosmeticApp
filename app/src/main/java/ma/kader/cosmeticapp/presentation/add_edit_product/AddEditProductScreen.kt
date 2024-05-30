@@ -8,9 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import ma.kader.cosmeticapp.presentation.add_edit_product.components.EditText
 import ma.kader.cosmeticapp.presentation.add_edit_product.components.SubmitButton
 import ma.kader.cosmeticapp.ui.theme.Dimens.defaultWeight
