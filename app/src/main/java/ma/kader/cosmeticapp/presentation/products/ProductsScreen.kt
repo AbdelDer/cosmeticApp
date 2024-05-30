@@ -33,7 +33,7 @@ fun ProductsScreen(
                     navController.navigate(Screen.AddEditProductScreen.route)
                 },
             ) {
-                Icon(imageVector = Icons.Default.Add, contentDescription = "Add note")
+                Icon(imageVector = Icons.Default.Add, contentDescription = "Add product")
             }
         },
     ) {
