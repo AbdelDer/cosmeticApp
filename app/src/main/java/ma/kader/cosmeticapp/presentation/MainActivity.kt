@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import ma.kader.cosmeticapp.CosmeticApplication
 import ma.kader.cosmeticapp.di.viewModelFactory
+import ma.kader.cosmeticapp.di.viewModelFactoryWithStateHandle
 import ma.kader.cosmeticapp.presentation.add_edit_product.AddEditProductViewModel
 import ma.kader.cosmeticapp.presentation.products.ProductsViewModel
 import ma.kader.cosmeticapp.ui.navigation.AppNavHost
@@ -27,8 +28,11 @@ class MainActivity : ComponentActivity() {
                 )
 
                 val addEditProductViewModel = viewModel<AddEditProductViewModel>(
-                    factory = viewModelFactory {
-                        ProductsViewModel(CosmeticApplication.appModule.productRepository)
+                    factory = viewModelFactoryWithStateHandle { savedStateHandle ->
+                        AddEditProductViewModel(
+                            productRepository = CosmeticApplication.appModule.productRepository,
+                            savedStateHandle = savedStateHandle
+                        )
                     }
                 )
 
