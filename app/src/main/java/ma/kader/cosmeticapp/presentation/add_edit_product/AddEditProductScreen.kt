@@ -21,22 +21,46 @@ fun AddEditProductScreen(
     modifier: Modifier = Modifier,
     addEditProductViewModel: AddEditProductViewModel
 ) {
+    val titleState = addEditProductViewModel.productTitle.value
+    val descriptionState = addEditProductViewModel.productDescription.value
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = modifier
     ) {
         Column(
             verticalArrangement = Arrangement.Center
         ) {
             Spacer(modifier = Modifier.height(mediumPadding))
-            EditText(text = product.title)
+            EditText(
+                label = "Title",
+                text = titleState.text,
+                onValueChange = {
+                    addEditProductViewModel.onEvent(
+                        AddEditProductEvent.EnteredTitle(it)
+                    )
+                }
+            )
             Spacer(modifier = Modifier.height(mediumPadding))
-            EditText(text = product.description)
+            EditText(
+                label = "Description",
+                text = descriptionState.text,
+                onValueChange = {
+                    addEditProductViewModel.onEvent(
+                        AddEditProductEvent.EnteredDescription(it)
+                    )
+                }
+            )
         }
         Spacer(modifier = Modifier.weight(defaultWeight))
         SubmitButton(
             modifier = Modifier.padding(
                 bottom = mediumPadding
-            )
+            ),
+            onClick = {
+                addEditProductViewModel.onEvent(AddEditProductEvent.SaveProduct)
+                navController.navigateUp()
+            }
         )
     }
 }

@@ -14,12 +14,13 @@ import ma.kader.cosmeticapp.ui.theme.Dimens.smallPadding
 @Composable
 fun SubmitButton(
     modifier: Modifier = Modifier,
+    onClick: () -> Unit
 ) {
     Button(
         modifier = modifier
             .fillMaxWidth()
             .padding(smallPadding),
-        onClick = { /*TODO*/ },
+        onClick = onClick,
     ) {
         Text(text = stringResource(id = R.string.submit))
     }
@@ -29,5 +30,5 @@ fun SubmitButton(
 @Preview
 @Composable
 fun SubmitButtonPreview() {
-    SubmitButton()
+    SubmitButton(onClick = {})
 }
