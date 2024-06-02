@@ -7,7 +7,7 @@ import ma.kader.cosmeticapp.domain.repository.ProductRepository
 
 class ProductRepositoryImpl(val productDao: ProductDao): ProductRepository {
     override suspend fun insertProduct(product: Product) {
-        productDao.insertProduct(product)
+        productDao.upsertProduct(product)
     }
 
     override suspend fun deleteProduct(product: Product) {

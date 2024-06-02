@@ -2,16 +2,15 @@ package ma.kader.cosmeticapp.data.data_source
 
 import androidx.room.Dao
 import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Upsert
 import kotlinx.coroutines.flow.Flow
 import ma.kader.cosmeticapp.domain.model.Product
 
 @Dao
 interface ProductDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertProduct(product: Product)
+    @Upsert
+    suspend fun upsertProduct(product: Product)
     @Delete
     suspend fun deleteProduct(product: Product)
 

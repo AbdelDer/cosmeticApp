@@ -13,6 +13,7 @@ import ma.kader.cosmeticapp.presentation.add_edit_product.components.EditText
 import ma.kader.cosmeticapp.presentation.add_edit_product.components.SubmitButton
 import ma.kader.cosmeticapp.ui.theme.Dimens.defaultWeight
 import ma.kader.cosmeticapp.ui.theme.Dimens.mediumPadding
+import ma.kader.cosmeticapp.ui.theme.Dimens.smallPadding
 import ma.kader.cosmeticapp.util.TempData.product
 
 @Composable

@@ -21,29 +21,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CosmeticAppTheme {
-                val productsViewModel = viewModel<ProductsViewModel>(
-                    factory = viewModelFactory {
-                        ProductsViewModel(CosmeticApplication.appModule.productRepository)
-                    }
-                )
-
-                val addEditProductViewModel = viewModel<AddEditProductViewModel>(
-                    factory = viewModelFactoryWithStateHandle { savedStateHandle ->
-                        AddEditProductViewModel(
-                            productRepository = CosmeticApplication.appModule.productRepository,
-                            savedStateHandle = savedStateHandle
-                        )
-                    }
-                )
-
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    AppNavHost(
-                        productsViewModel = productsViewModel,
-                        addEditProductViewModel = addEditProductViewModel
-                    )
+                    AppNavHost()
                 }
             }
         }
